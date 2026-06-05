@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для моей китьки</title>
+    <style>
+        :root {
+            --bg-color: #faf6f0;
+            --card-bg: #ffffff;
+            --text-main: #3a312a;
+            --text-muted: #78695f;
+            --accent-warm: #cd8162;
+            --border-color: #ebdcd0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 30px 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 30px 24px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 24px rgba(184, 163, 148, 0.1);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .photo-block {
+            margin-bottom: 20px;
+        }
+
+        .photo-block img {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 18px;
+            object-fit: cover;
+        }
+
+        .photo-caption {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-top: 14px;
+            letter-spacing: -0.3px;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            font-weight: 700;
+            text-align: left;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            margin-bottom: 14px;
+            text-align: left;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-box {
+            background-color: #fffaf7;
+            border-left: 3px solid var(--accent-warm);
+            padding: 16px;
+            border-radius: 0 16px 16px 0;
+            margin: 18px 0;
+            text-align: left;
+        }
+
+        .highlight-box p {
+            font-size: 1rem;
+            color: var(--text-main);
+            margin: 0;
+            font-style: italic;
+        }
+
+        .cute-list {
+            list-style: none;
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        .cute-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        .cute-list li::before {
+            content: "🐾";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 0.9rem;
+        }
+
+        .interactive-note {
+            background: #fdf8f4;
+            border: 1px dashed var(--accent-warm);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        .interactive-note:active {
+            transform: scale(0.99);
+            background: #f7ede4;
+        }
+
+        .note-text {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 30px;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- БЛОК 1: ФОТО И ГЛАВНОЕ НАПОМИНАНИЕ -->
+        <div class="card">
+            <div class="photo-block">
+                <!-- Сюда вставляется её фотография -->
+                <img src="./photo.jpg" alt="Моя китька">
+                <div class="photo-caption">Моя китька</div>
+            </div>
+            <p>
+                Я сделал эту страницу просто потому что люблю тебя и хочу, чтобы у тебя был большой большой заряд сил и милоты❤️
+            </p>
+        </div>
+
+        <!-- БЛОК 2: РЕАЛЬНОСТЬ + ПОДДЕРЖКА -->
+        <div class="card">
+            <h2>Просто хочу напомнить</h2>
+    
+            <div class="highlight-box">
+                <p>Я вижу, что у тебя сейчас тяжёлый период, и хочу просто быть рядом, без давления.</p>
+            </div>
+            
+            <p>
+                Спокойно, тихо, без лишнего шума, дурацких расспросов или глупых обид. Когда тебе нужно будет просто уткнуться носом (к сожалению, виртуально) и помолчать — я здесь.
+            </p>
+        </div>
+
+        <!-- БЛОК 3: МИЛЫЕ ВЕЩИ  -->
+        <div class="card">
+            <h2>Кошачьи факты</h2>
+            <ul class="cute-list">
+                <li>Она милашка:3.</li>
+                <li>Будешь с этим спорить - отгрызу коленки!</li>
+                <li>Она может полностью уйти в книги (буквально) и с огнём в глазах рассказывать, как ей понравилась история про нектохетов или почему Облонский гандон.</li>
+                <li>Любит хвастаться своими руками и спиной (А ведь есть чем!)</li>
+                <li>Всё ещё ищет себя в ИТ и жизни, но обязательно найдёт!</li>
+            </ul>
+        </div>
+
+        <!-- БЛОК 4: ИНТЕРАКТИВНЫЙ МИЛЫЙ КЛИКЕР -->
+        <div class="card">
+            <p style="text-align: center; font-weight: 600; margin-bottom: 10px;">Маленькая кнопка милоты</p>
+            <div class="interactive-note" onclick="readNote()">
+                <div class="note-text" id="noteContent">Нажми сюда, китя...</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            Я люблю тебя и всегда буду рядом ❤️
+        </div>
+
+    </div>
+
+    <script>
+        // Сюда можно вписать ваши личные, локальные милые фразы, шутки или напоминания
+        const warmThoughts = [
+            "Ты лучший котик во вселенной! 🐾",
+            "Сессия закончится, долги сдадутся, и настанет день, когда мы встретимся!",
+            "Если нужно заказать тебе кофе или еды, пока ты учишься - просто маякни!",
+            "А ты всё же милашка:3",
+            "Твой синусоид думает о тебе каждую минуту и переживает за тебя. ❤️",
+            "Ты со всем справишься. По-другому просто быть не может! ❤️"
+        ];
+
+        let lastIndex = -1;
+
+        function readNote() {
+            const element = document.getElementById('noteContent');
+            let textIndex = Math.floor(Math.random() * warmThoughts.length);
+            
+            while (textIndex === lastIndex) {
+                textIndex = Math.floor(Math.random() * warmThoughts.length);
+            }
+            lastIndex = textIndex;
+
+            element.style.opacity = 0;
+            setTimeout(() => {
+                element.innerText = warmThoughts[textIndex];
+                element.style.opacity = 1;
+            }, 120);
+        }
+
+        const cards = document.querySelectorAll('.card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        cards.forEach(card => observer.observe(card));
+    </script>
+</body>
+</html>
